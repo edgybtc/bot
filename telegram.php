@@ -6,7 +6,7 @@ if (!file_exists('madeline.php')) {
 include 'madeline.php';
 
 $MadelineProto = new \danog\MadelineProto\API('session.madeline');
-$MadelineProto->bot_login('459438017:LTRiXI1Lgjlb-dSX5uN8ymG8_5naCLf5YwMtDcLmR4k');
+$MadelineProto->start();
 
 $me = $MadelineProto->get_self();
 
@@ -17,11 +17,11 @@ if (!$me['bot']) {
     $MadelineProto->channels->joinChannel(['channel' => '@MadelineProto']);
 
     try {
-        $MadelineProto->messages->importChatInvite(['hash' => 'https://t.me/joinchat/Bgrajz6K-aJKu0IpGsLpBg']);
+        $MadelineProto->messages->importChatInvite(['hash' => 'https://t.me/joinchat/G2J3wUjsUUOcrino67fhCg']);
     } catch (\danog\MadelineProto\RPCErrorException $e) {
     }
 
-    $MadelineProto->messages->sendMessage(['peer' => 'https://t.me/joinchat/Bgrajz6K-aJKu0IpGsLpBg', 'message' => 'Testing MadelineProto!']);
+    $MadelineProto->messages->sendMessage(['peer' => 'https://t.me/joinchat/G2J3wUjsUUOcrino67fhCg', 'message' => 'Testing MadelineProto!']);
 }
 echo 'OK, done!'
 ?>
